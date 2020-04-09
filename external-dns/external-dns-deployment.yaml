@@ -6,7 +6,8 @@ spec:
   strategy:
     type: Recreate
   selector:
-    app: external-dns
+    matchLabels:
+      app: external-dns
   template:
     metadata:
       labels:
