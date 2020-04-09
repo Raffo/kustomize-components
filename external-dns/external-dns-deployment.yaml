@@ -5,6 +5,8 @@ metadata:
 spec:
   strategy:
     type: Recreate
+  selector:
+    app: external-dns
   template:
     metadata:
       labels:
