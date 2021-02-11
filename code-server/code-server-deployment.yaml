@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: code-server
+  name: code-server
+  namespace: code-server
+spec:
+  selector:
+    matchLabels:
+      app: code-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: code-server
+    spec:
+      containers:
+      - image: codercom/code-server
+        imagePullPolicy: Always
+        name: code-servery
+        ports:
+        - containerPort: 8443
+          name: https
+        volumeMounts:
+        - name: code-server-storage
+          mountPath: /go/src
+      volumes:
+      - name: code-server-storage
+        persistentVolumeClaim:
+          claimName: code-store
