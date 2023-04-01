@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: gcr.io/k8s-staging-external-dns/external-dns
+        image: x0rg/external-dns
         args:
         - --source=service
         - --source=ingress
