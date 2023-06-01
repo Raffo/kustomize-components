@@ -16,6 +16,7 @@ spec:
       containers:
       - name: external-dns
         image: x0rg/external-dns
+        imagePullPolicy: Always
         args:
         - --source=service
         - --source=ingress
