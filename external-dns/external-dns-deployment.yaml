@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: x0rg/external-dns
+        image: gcr.io/k8s-staging-external-dns/external-dns
         imagePullPolicy: Always
         args:
         - --source=service
